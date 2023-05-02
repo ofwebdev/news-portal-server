@@ -1,11 +1,15 @@
-import express from "express";
-import cors from "cors";
+// import express from "express";
+// import cors from "cors";
+// import categories from "./data/categories.json" assert { type: "json" };
+// import news from "./data/news.json" assert { type: "json" };
+
+const express = require("express");
+const cors = require("cors");
+const categories = require("./data/categories.json");
+const news = require("./data/news.json");
 
 const app = express();
 app.use(cors());
-
-import categories from "./data/categories.json" assert { type: "json" };
-import news from "./data/news.json" assert { type: "json" };
 app.use(express.json());
 
 const port = process.env.PORT || 5000;
