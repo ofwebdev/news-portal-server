@@ -1,12 +1,14 @@
 import express from "express";
-import categories from "./data/categories.json" assert { type: "json" };
-import news from "./data/news.json" assert { type: "json" };
 import cors from "cors";
 
 const app = express();
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+import categories from "./data/categories.json" assert { type: "json" };
+import news from "./data/news.json" assert { type: "json" };
+app.use(express.json());
+
+const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send("Home page on server side");
